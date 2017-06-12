@@ -6,18 +6,16 @@
 
     <div class="dashboard" id="dashboard">
         <twitter :initial-tweets="{{ json_encode($initialTweets) }}" grid="a1:a3"></twitter>
-        <calendar grid="b1:b2"></calendar>
-        <music grid="c1:d1"></music>
-        <uptime grid="b3"></uptime>
 
-        <tasks team-member="alex" grid="c2"></tasks>
-        <tasks team-member="freek" grid="d2"></tasks>
-        <tasks team-member="seb" grid="c3"></tasks>
-        <tasks team-member="willem" grid="d3"></tasks>
+        <bugsnag-errors grid="b1:c1"></bugsnag-errors>
 
-        <time-weather grid="e1" dateformat="ddd DD/MM"></time-weather>
-        <packagist grid="e2"></packagist>
-        <github grid="e3"></github>
+        <tasks team-member="colegio" grid="b2:c2"></tasks>
+        <tasks team-member="personal" grid="b3:c3"></tasks>
+
+        <time-weather grid="d1" dateformat="ddd DD/MM"></time-weather>
+        <packagist grid="d2"></packagist>
+        <github grid="d3"></github>
+        <laravel-news grid="e1:e3"></laravel-news>
 
         <internet-connection></internet-connection>
     </div>
