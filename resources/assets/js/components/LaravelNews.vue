@@ -1,5 +1,5 @@
 <template>
-    <grid :position="grid" modifiers="overflow">
+    <tile :position="position" modifiers="overflow">
        <section class="laravel-news">
            <!--<h1 class="laravel-news__title">Laravel News</h1>-->
            <section class="laravel-news__news-items">
@@ -11,23 +11,23 @@
            </section>
 
        </section>
-    </grid>
+    </tile>
 </template>
 
 <script>
 import echo from '../mixins/echo';
-import Grid from './atoms/Grid';
+import Tile from './atoms/Tile';
 import saveState from 'vue-save-state';
 
 export default {
 
     components: {
-        Grid,
+        Tile,
     },
 
     mixins: [echo, saveState],
 
-    props: ['grid'],
+    props: ['position'],
 
     data() {
         return {

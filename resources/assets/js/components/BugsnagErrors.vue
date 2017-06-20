@@ -1,5 +1,5 @@
 <template>
-    <grid :position="grid" modifiers="overflow">
+    <tile :position="position" modifiers="overflow">
        <section class="bugsnag">
            <h1 class="bugsnag__title">Bugsnag Errors ({{ errors.length }})</h1>
            <ul class="bugsnag_error">
@@ -10,23 +10,23 @@
                </li>
            </ul>
        </section>
-    </grid>
+    </tile>
 </template>
 
 <script>
 import echo from '../mixins/echo';
-import Grid from './atoms/Grid';
+import Tile from './atoms/Tile';
 import saveState from 'vue-save-state';
 
 export default {
 
     components: {
-        Grid,
+        Tile,
     },
 
     mixins: [echo, saveState],
 
-    props: ['grid'],
+    props: ['position'],
 
     data() {
         return {

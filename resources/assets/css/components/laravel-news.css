@@ -1,0 +1,46 @@
+.laravel-news {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.laravel-news__title {
+  color: var(--gray-light);
+  opacity: 1;
+  font-size: var(--font-size-m);
+  text-transform: uppercase;
+}
+
+.laravel-news__news-items {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.laravel-news__news-items > div {
+  padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+  position: relative;
+  flex: 1;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.laravel-news__news-items > div .date {
+  font-size: var(--font-size-xxs);
+  font-weight: 600;
+  opacity: .85;
+}
+.laravel-news__news-items > div .description {
+  margin-top: 0.1em;
+  font-size: var(--font-size-xxs);
+  font-size: 0.60em;
+}
+.laravel-news__news-items > div:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  content: '';
+  background-color: rgba(10, 10, 10, 0.65);
+}

@@ -1,0 +1,25 @@
+.bugsnag__title {
+  color: var(--gray-light);
+  opacity: 1;
+  font-size: var(--font-size-m);
+  text-transform: uppercase;
+}
+
+.bugsnag_errors {
+  color: var(--color);
+  font-size: var(--font-size-s);
+}
+
+li.bugsnag_error {
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+}
+
+.bugsnag__error_last_context {
+  color: var(--color);
+}
+
+.bugsnag__error_class, .bugsnag__error_misc {
+  color: var(--gray-light);
+  font-size: var(--font-size-s);
+}

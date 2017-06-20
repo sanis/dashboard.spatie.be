@@ -3,6 +3,8 @@ import './bootstrap.js';
 import Echo from 'laravel-echo';
 import Vue from 'vue';
 
+import Dashboard from './components/Dashboard';
+import Calendar from './components/Calendar';
 import Github from './components/Github';
 import InternetConnection from './components/InternetConnection';
 import Packagist from './components/Packagist';
@@ -17,6 +19,8 @@ new Vue({
     el: '#dashboard',
 
     components: {
+        Dashboard,
+        Calendar,
         Github,
         InternetConnection,
         Packagist,
