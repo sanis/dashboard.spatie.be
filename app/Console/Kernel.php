@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Components\Twitter\ListenForQuotes::class,
         \App\Console\Components\Twitter\SendFakeTweet::class,
         \App\Console\Components\LaravelNews\FetchNews::class,
-        \App\Console\Components\Bugsnag\FetchErrors::class,
+        \App\Console\Components\Sentry\FetchErrors::class,
         UpdateDashboard::class,
     ];
 

@@ -7,7 +7,7 @@
     <dashboard id="dashboard" columns="5" rows="3">
         <twitter :initial-tweets="{{ json_encode($initialTweets) }}" position="a1:a3"></twitter>
 
-        <bugsnag-errors position="b1:c1"></bugsnag-errors>
+        <sentry-errors position="b1:c1"></sentry-errors>
 
         <tasks team-member="colegio" position="b2:c2"></tasks>
         <tasks team-member="personal" position="b3:c3"></tasks>

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Console\Components\Bugsnag;
+namespace App\Console\Components\Sentry;
 
-use App\Events\Bugsnag\ErrorsFetched;
+use App\Events\Sentry\ErrorsFetched;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use GuzzleHttp\Client;
@@ -21,7 +21,7 @@ class FetchErrors extends Command
      *
      * @var string
      */
-    protected $description = 'Fetch errors from Bugsnag.';
+    protected $description = 'Fetch errors from Sentry.';
 
     /**
      * Execute the console command.
@@ -32,9 +32,10 @@ class FetchErrors extends Command
     {
         $client = new Client();
 
-        $response = $client->get('https://api.bugsnag.com/projects/'.config("services.bugsnag.project_id").'/errors?status=in-progress&auth_token='.config("services.bugsnag.token"), [
+        $response = $client->get('https://sentry.io/api/0/projects/'.config('services.sentry.organization').'/'.config('services.sentry.project').'/issues/', [
             'headers' => [
-                'Content-Type' => 'application/json'
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer '.config('services.sentry.token')
             ]
         ])->getBody();
 
@@ -42,11 +43,11 @@ class FetchErrors extends Command
         $errors = collect(json_decode($response))
             ->map(function($error){
                 return [
-                    'class' => $error->class,
-                    'last_message' => $error->last_message,
-                    'occurrences' => $error->occurrences,
-                    'last_context' => $error->last_context,
-                    'last_received' => Carbon::parse($error->last_received)->diffForHumans()
+                    'class' => $error->culprit,
+                    'last_message' => $error->title,
+                    'occurrences' => $error->count,
+                    'last_context' => $error->title,
+                    'last_received' => Carbon::parse($error->lastSeen)->diffForHumans()
                 ];
             })
             ->toArray();

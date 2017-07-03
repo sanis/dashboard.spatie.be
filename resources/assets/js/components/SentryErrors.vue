@@ -1,12 +1,12 @@
 <template>
     <tile :position="position" modifiers="overflow">
-       <section class="bugsnag">
-           <h1 class="bugsnag__title">Bugsnag Errors ({{ errors.length }})</h1>
-           <ul class="bugsnag_error">
-               <li v-for="error in errors" class="bugsnag_error">
-                   <p class="bugsnag__error_last_context">{{ error.last_context }}</p>
-                   <p class="bugsnag__error_class">{{ error.class }}</p>
-                   <p class="bugsnag__error_misc">{{ error.occurrences }} events | {{ error.last_received }}</p>
+       <section class="sentry">
+           <h1 class="sentry__title">Sentry Errors ({{ errors.length }})</h1>
+           <ul class="sentry_error">
+               <li v-for="error in errors" class="sentry_error">
+                   <p class="sentry__error_last_context">{{ error.last_context }}</p>
+                   <p class="sentry__error_class">{{ error.class }}</p>
+                   <p class="sentry__error_misc">{{ error.occurrences }} events | {{ error.last_received }}</p>
                </li>
            </ul>
        </section>
@@ -38,7 +38,7 @@ export default {
 
         getEventHandlers() {
             return {
-                'Bugsnag.ErrorsFetched': response => {
+                'Sentry.ErrorsFetched': response => {
                     this.errors = response.errors;
                 },
             };
@@ -46,7 +46,7 @@ export default {
 
         getSaveStateConfig() {
             return {
-                cacheKey: 'bugsnag-errors',
+                cacheKey: 'sentry-errors',
             };
         },
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events\Bugsnag;
+namespace App\Events\Sentry;
 
 use App\Events\DashboardEvent;
 

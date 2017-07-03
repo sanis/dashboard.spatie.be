@@ -18,8 +18,9 @@ return [
         'vendor' => env('PACKAGIST_VENDOR'),
     ],
 
-    'bugsnag' => [
-        'project_id' => env('BUGSNAG_PROJECT_ID'),
-        'token'      => env('BUGSNAG_API_TOKEN'),
+    'sentry' => [
+        'token'         => env('SENTRY_TOKEN'),
+        'organization'  => env('SENTRY_ORG'),
+        'project'       => env('SENTRY_PROJECT'),
     ],
 ];

@@ -12,7 +12,7 @@ import Tasks from './components/Tasks';
 import TimeWeather from './components/TimeWeather';
 import Twitter from './components/Twitter';
 import LaravelNews from './components/LaravelNews';
-import BugsnagErrors from './components/BugsnagErrors';
+import SentryErrors from './components/SentryErrors';
 
 new Vue({
 
@@ -28,7 +28,7 @@ new Vue({
         TimeWeather,
         Twitter,
         LaravelNews,
-        BugsnagErrors,
+        SentryErrors,
     },
 
     created() {
