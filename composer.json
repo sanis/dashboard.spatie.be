@@ -9,6 +9,8 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "ext-mysql": "*",
+        "ext-redis": "*",
         "barryvdh/laravel-ide-helper": "^2.1",
         "erusev/parsedown": "^1.6",
         "fennb/phirehose": "^1.0",

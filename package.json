@@ -37,7 +37,8 @@
     "twemoji": "^2.3.0",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3",
-    "vue-save-state": "^1.1.0"
+    "vue-save-state": "^1.1.0",
+    "yarn": "^0.27.5"
   },
   "jest": {
     "testRegex": "test.js$"
