@@ -57,7 +57,7 @@
                 displayingTopTweetSince: moment(),
                 tweets: [],
                 waitingLine: [],
-                ownScreenName: '@spatie_be',
+                ownScreenName: '@m1guelpf',
             };
         },
 

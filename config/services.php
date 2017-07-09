@@ -17,4 +17,10 @@ return [
     'packagist' => [
         'vendor' => env('PACKAGIST_VENDOR'),
     ],
+
+    'sentry' => [
+        'token'         => env('SENTRY_TOKEN'),
+        'organization'  => env('SENTRY_ORG'),
+        'project'       => env('SENTRY_PROJECT'),
+    ],
 ];
